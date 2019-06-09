@@ -1,0 +1,36 @@
+<root>
+	<command>
+		<name>bridge</name>
+		<description>bridge utils</description>
+		<command>
+			<name>build</name>
+			<description>builds bridges</description>
+			<location>Bridge.build</location>
+		</command>
+		<command>
+			<name>destroy</name>
+			<description>destroys bridges</description>
+			<location>Bridge.destroy</location>
+		</command>
+	</command>
+	<command>
+		<name>say</name>
+		<description>printing</description>
+		<location>Test.say</location>
+	</command>
+	<command>
+		<name>para</name>
+		<description>testing</description>
+		<location>Test.parameterTest</location>
+	</command>
+	<command>
+		<name>simp</name>
+		<description>testing</description>
+		<location>Test.simpleTest</location>
+	</command>
+	<command>
+		<name>arr</name>
+		<description>arr test</description>
+		<location>Test.arrayTest</location>
+	</command>
+</root>

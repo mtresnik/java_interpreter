@@ -1,0 +1,22 @@
+<root>
+	<command>
+		<name>help</name>
+		<description>Provides descriptions of commands.</description>
+		<location>DefaultCommands.help</location>
+	</command>
+	<command>
+		<name>loadc</name>
+		<description>Loads a given command set.</description>
+		<location>DefaultCommands.loadc</location>
+	</command>
+	<command>
+		<name>ans</name>
+		<description>Gives the last return value.</description>
+		<location>DefaultCommands.ans</location>
+	</command>
+	<command>
+		<name>exit</name>
+		<description>Exits the program.</description>
+		<location>DefaultCommands.exit</location>
+	</command>
+</root>
