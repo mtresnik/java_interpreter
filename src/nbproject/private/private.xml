@@ -3,15 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Projects/Personal/Commands/src/Bridge.java</file>
-            <file>file:/D:/Projects/Personal/Commands/src/RegexUtils.java</file>
-            <file>file:/D:/Projects/Personal/Commands/src/CommandNotFoundException.java</file>
-            <file>file:/D:/Projects/Personal/Commands/src/Test.java</file>
-            <file>file:/D:/Projects/Personal/Commands/src/CommandNode.java</file>
-            <file>file:/D:/Projects/Personal/Commands/src/DefaultCommands.java</file>
-            <file>file:/D:/Projects/Personal/Commands/src/Main.java</file>
-            <file>file:/D:/Projects/Personal/Commands/src/CommandUtils.java</file>
-            <file>file:/D:/Projects/Personal/Commands/src/ReflectionUtils.java</file>
+            <file>file:/C:/Users/Mike/Documents/NetBeansProjects/java_interpreter/src/src/Main.java</file>
+            <file>file:/C:/Users/Mike/Documents/NetBeansProjects/java_interpreter/src/src/DefaultCommands.java</file>
         </group>
     </open-files>
 </project-private>

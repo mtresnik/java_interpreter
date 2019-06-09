@@ -115,7 +115,8 @@ public class CommandNode {
         char[] charRep = endString.toCharArray();
         String accumulated = "";
         int regexIndex = 0;
-        for (int i = 0; i < charRep.length; i++) {
+//        System.out.println("regArr:" + Arrays.toString(regArr));
+        for (int i = 0; i < charRep.length &&  regexIndex < regArr.length; i++) {
             accumulated+= charRep[i];
             if(accumulated.matches(regArr[regexIndex]) && i == charRep.length - 1){
                 toMatch[regexIndex] = accumulated;
@@ -308,6 +309,9 @@ public class CommandNode {
             for (CommandNode child : root.children) {
                 if (treePath.equals(child.name)) {
 //                    System.out.println(child);
+                    if(child.location == null){
+                        throw new CommandNotFoundException(treePath);
+                    }
                     Method m = CommandUtils.getMethod(child.location);
                     return new EntryObject(m, child.name);
                 }

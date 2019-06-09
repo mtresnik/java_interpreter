@@ -12,6 +12,9 @@ public class DefaultCommands {
         CommandNode[] children = CommandUtils.ROOT.children;
         for(CommandNode child : children){
             System.out.println(child.name + " - " + child.description);
+            if(child.location == null){
+                System.out.println("\t" + Arrays.toString(child.childNames()));
+            }
         }
     }
     
@@ -22,18 +25,18 @@ public class DefaultCommands {
             System.out.println(com.description+ " : " + Arrays.toString(clazzes));
         }else{
             System.out.println(com.description);
+            System.out.println("Options:" + Arrays.toString(com.childNames()));
         }
     }
     
     public static void loadc(String fileLocation){
-        System.out.println("Loading:" + fileLocation);
         CommandNode newRoot = null;
         try {
             newRoot = CommandUtils.loadCommands(fileLocation);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(DefaultCommands.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Loaded!");
+        System.out.println("Loaded:" + Arrays.toString(newRoot.childNames()));
     }
     
     public static void ans(){

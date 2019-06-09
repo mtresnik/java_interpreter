@@ -167,12 +167,12 @@ public class RegexUtils {
             return new String[]{};
         }
         String[] retArr = new String[regArr.length*2 - 1];
+        for(int i = 0; i < retArr.length; i++){
+            retArr[i] = REGEX.SPACE;
+        }
         for (int i = 0; i < regArr.length; i++) {
             int index = 2*i;
             retArr[index] = regArr[i];
-        }
-        for(int i = 1; i < regArr.length; i+=2){
-            retArr[i] = REGEX.SPACE;
         }
         return retArr;
     }

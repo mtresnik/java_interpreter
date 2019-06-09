@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -24,9 +23,11 @@ public class Main {
     public static void liveTest() {
         try {
             Scanner sc = new Scanner(System.in);
+            System.out.print("> ");
             while(sc.hasNextLine()){
                 String line = sc.nextLine();
                 CommandUtils.invoke(line);
+                System.out.print("> ");
             }
         } catch (Exception e) {
             e.printStackTrace();

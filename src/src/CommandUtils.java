@@ -167,12 +167,12 @@ public final class CommandUtils {
             return ROOT.invoke(passText);
         }catch(CommandNotFoundException iae){
             System.out.println(iae.getMessage());
-            System.out.println("Type 'help' for a valid list of commands.");
+            System.out.println("Type 'help' for a list of valid commands.");
         }catch(IllegalArgumentException iae){
             System.out.println(iae.getMessage());
             CommandNode actual = CommandNode.getPath(passText);
             Method m = getMethod(actual.location);
-            System.out.println("Expected Paramters:" + Arrays.toString(m.getParameterTypes()));
+            System.out.println("Expected Parameters:" + Arrays.toString(m.getParameterTypes()));
         }
         return null;
     }

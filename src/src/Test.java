@@ -8,7 +8,11 @@ public class Test {
         System.out.println(toSay);
     }
     
-    public static void parameterTest(String s1, int i1, double d1, String[] sArr, int i2, double[] dArr){
+    public static void parameterTest(String s1, int i1, double d1){
+        System.out.println("CALLED");
+        System.out.println("str:" + s1);
+        System.out.println("int:" + i1);
+        System.out.println("doubl:" + d1);
     }
     
     public static void simpleTest(String s1, int i1){
