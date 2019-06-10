@@ -18,14 +18,16 @@ public class DefaultCommands {
         }
     }
     
-    public static void helpCommand(CommandNode com) throws ClassNotFoundException, CommandNotFoundException{
+    public static void helpCommand(String pathText, CommandNode com) throws ClassNotFoundException, CommandNotFoundException{
         if(com.location != null){
             Method m = CommandUtils.getMethod(com.location);
             Class[] clazzes = m.getParameterTypes();
-            System.out.println(com.description+ " : " + Arrays.toString(clazzes));
+            System.out.println(pathText + " : " + Arrays.toString(clazzes) + " - " + com.description);
         }else{
             System.out.println(com.description);
-            System.out.println("Options:" + Arrays.toString(com.childNames()));
+            for(CommandNode child : com.children){
+                System.out.println("\t["+ child.name +":" + child.description +"]");
+            }
         }
     }
     
@@ -34,7 +36,8 @@ public class DefaultCommands {
         try {
             newRoot = CommandUtils.loadCommands(fileLocation);
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(DefaultCommands.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("File at location: \"" + fileLocation + "\" cannot be found.");
+            return;
         }
         System.out.println("Loaded:" + Arrays.toString(newRoot.childNames()));
     }

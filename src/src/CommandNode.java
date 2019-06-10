@@ -79,7 +79,7 @@ public class CommandNode {
         if(c.equals(CommandUtils.ROOT)){
             throw new CommandNotFoundException(endString);
         }
-        DefaultCommands.helpCommand(c);
+        DefaultCommands.helpCommand(endString, c);
         return null;
     }
     

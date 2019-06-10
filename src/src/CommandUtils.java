@@ -19,7 +19,7 @@ public final class CommandUtils {
 
     public static boolean INITIALIZED = false;
     public static CommandNode ROOT = null, HELP = null;
-    public static String ROOT_LOCATION = "commands/root.xml";
+    public static String ROOT_LOCATION = "root.xml";
     
     static{
         if(INITIALIZED == false){
@@ -75,7 +75,7 @@ public final class CommandUtils {
     }
     
     public static CommandNode loadCommands(String fileLocation) throws FileNotFoundException{
-        File fXmlFile = new File(fileLocation);
+        File fXmlFile = new File("commands/" + fileLocation);
         String retMessage = "File:" + fXmlFile.getAbsolutePath() + " cannot be found.";
         if(fXmlFile.exists() == false){
             throw new FileNotFoundException(retMessage);
