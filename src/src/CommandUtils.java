@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
@@ -20,11 +21,18 @@ public final class CommandUtils {
     public static boolean INITIALIZED = false;
     public static CommandNode ROOT = null, HELP = null;
     public static String ROOT_LOCATION = "root.xml";
+    public static String COMMAND_LOC = "commands/";
+    public static String CURR_DIR = COMMAND_LOC;
+    public static final String INIT_NAME = "init.txt";
     
     static{
         if(INITIALIZED == false){
             try {
+                System.out.println("Loading from \""
+                        + CURR_DIR + "init.txt"
+                        + "\" . . .");
                 ROOT = CommandUtils.loadCommands(ROOT_LOCATION);
+                DefaultCommands.invokeAll(new File(CURR_DIR + "init.txt"));
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(CommandUtils.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -75,7 +83,7 @@ public final class CommandUtils {
     }
     
     public static CommandNode loadCommands(String fileLocation) throws FileNotFoundException{
-        File fXmlFile = new File("commands/" + fileLocation);
+        File fXmlFile = new File(CURR_DIR + fileLocation);
         String retMessage = "File:" + fXmlFile.getAbsolutePath() + " cannot be found.";
         if(fXmlFile.exists() == false){
             throw new FileNotFoundException(retMessage);
@@ -176,4 +184,21 @@ public final class CommandUtils {
         }
         return null;
     }
+    
+    public static void liveInput(){
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("> ");
+            while(sc.hasNextLine()){
+                String line = sc.nextLine();
+                if(line.length() > 0){
+                    CommandUtils.invoke(line);
+                }
+                System.out.print("> ");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
 }

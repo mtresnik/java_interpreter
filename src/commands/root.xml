@@ -10,9 +10,19 @@
 		<location>DefaultCommands.loadc</location>
 	</command>
 	<command>
+		<name>loadf</name>
+		<description>Loads a given command set from a folder.</description>
+		<location>DefaultCommands.loadf</location>
+	</command>
+	<command>
 		<name>ans</name>
 		<description>Gives the last return value.</description>
 		<location>DefaultCommands.ans</location>
+	</command>
+	<command>
+		<name>cls</name>
+		<description>Clears the screen.</description>
+		<location>DefaultCommands.cls</location>
 	</command>
 	<command>
 		<name>exit</name>

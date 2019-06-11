@@ -16,7 +16,7 @@ public class RegexUtils {
 
         public static final String STRING = "(\"{1}[\\s\\S]+\"{1})|(\'{1}[\\s\\S]+\'{1})";
         public static final String INTEGER = "((\\+|-)?\\d+)";
-        public static final String DOUBLE = "((\\+|-)?(0|([1-9][0-9]*))(\\.[0-9]+)?)";
+        public static final String DOUBLE = "((\\+|-)?(0|([1-9][0-9]*))(\\.[0-9]*)?)";
         public static final String SPACE = "( +)";
         public static final String COMMA = "(( *),( *))";
         
@@ -113,9 +113,9 @@ public class RegexUtils {
             castMap.put(int[].class, ARRAY_CAST(INTEGER, Integer.class, INTEGER_CAST));
             
             arrayMap.put( Double[].class, ARRAY(DOUBLE));
-            castMap.put(Double[].class, ARRAY_CAST(DOUBLE, Double[].class, DOUBLE_CAST));
+            castMap.put(Double[].class, ARRAY_CAST(DOUBLE, Double.class, DOUBLE_CAST));
             arrayMap.put( double[].class, ARRAY(DOUBLE));
-            castMap.put(double[].class, ARRAY_CAST(DOUBLE, Integer[].class, DOUBLE_CAST));
+            castMap.put(double[].class, ARRAY_CAST(DOUBLE, Double.class, DOUBLE_CAST));
         }
         
         private static String[] allDefaults(){

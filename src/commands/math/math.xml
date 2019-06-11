@@ -1,0 +1,22 @@
+<root>
+	<command>
+		<name>sum</name>
+		<description>Adds all elements in an array.</description>
+		<location>MathUtils.sum</location>
+	</command>
+	<command>
+		<name>mult</name>
+		<description>Multiplies all elements in an array.</description>
+		<location>MathUtils.mult</location>
+	</command>
+	<command>
+		<name>dot</name>
+		<description>Performs the dot product on two vectors.</description>
+		<location>MathUtils.dot</location>
+	</command>
+	<command>
+		<name>fact</name>
+		<description>Performs the factorial for a given number.</description>
+		<location>MathUtils.fact</location>
+	</command>
+</root>

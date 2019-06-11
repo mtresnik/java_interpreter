@@ -1,0 +1,7 @@
+<root>
+	<command>
+		<name>say</name>
+		<description>Outputs the passed string to the console.</description>
+		<location>OutUtils.say</location>
+	</command>
+</root>
